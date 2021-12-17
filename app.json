@@ -17,6 +17,8 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.sparksfly",
+      "buildNumber": "1.0.0",
       "supportsTablet": true,
       "infoPlist": {
         "NSPhotoLibraryUsageDescription": "The app wants to access your gallery to pick images and create awesome slideshows..",
@@ -35,7 +37,8 @@
         "android.permission.WRITE_EXTERNAL_STORAGE",
         "android.permission.RECORD_AUDIO"
       ],
-      "package": "com.sparksfly"
+      "package": "com.sparksfly",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png",
