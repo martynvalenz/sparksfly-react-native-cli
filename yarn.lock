@@ -1044,11 +1044,6 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
-"@baronha/react-native-photo-editor@^1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@baronha/react-native-photo-editor/-/react-native-photo-editor-1.1.4.tgz#a95bfd035f60361e4194ca3862d200f0df29e965"
-  integrity sha512-EOKAYYy/xbuyWtkxJPoxw5efria6wMlGxMNoFnBgQ2yNfDz8fYl0ZQX/XPK9ITch/s4XeJMwvd8M6+81xzm4gw==
-
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.npmjs.org/@cnakazawa/watch/-/watch-1.0.4.tgz"
@@ -6339,10 +6334,10 @@ react-native-image-picker@^4.5.0:
   resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-4.5.0.tgz#dda5de50cc9617a8f0c26b71160da1cd088869b3"
   integrity sha512-YUPNBL5f2BOwpjBmpxQiTy7T36+387ri6hEPB+3PjXEH/MCHwmedfP3iJ+kFNf1wPBHmoKRPiaKcBc/YzBbixg==
 
-react-native-photo-editor@^1.0.12:
-  version "1.0.12"
-  resolved "https://registry.yarnpkg.com/react-native-photo-editor/-/react-native-photo-editor-1.0.12.tgz#bd2dff20e8f35445e875a05dd88b40d024e6365f"
-  integrity sha512-HDBCPluN2qqNm/RLUq7H+N5FNcgA+BLqELYs5lofUhKk3rfP/lP/iR3Jz3Oo8rXomEu7R6Dp3YKJ8+EukcN9XQ==
+react-native-photoeditorsdk@^2.11.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/react-native-photoeditorsdk/-/react-native-photoeditorsdk-2.11.0.tgz#c8dc1d05b73571715ef8fd1fcb3e311de34355bf"
+  integrity sha512-P9g4w0eIiVo/6l+lIYI3wRaJnEYK8ICPxkXlTRjek4uQgM5kUfJi1XUsOaxVdhub5kFEOaaYNFReHhVhY000Jw==
 
 react-native-reanimated@~2.2.0:
   version "2.2.4"
