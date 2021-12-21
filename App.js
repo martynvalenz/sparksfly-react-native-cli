@@ -15,6 +15,7 @@ import SelectPhotos from "./screens/SlideShow/SelectPhotos";
 import ImageGallery from "./screens/SlideShow/ImageGallery";
 import RecordScreen from "./screens/RecordVideo/RecordScreen";
 import SaveVideo from "./screens/RecordVideo/SaveVideo";
+import EditVideo from "./screens/RecordVideo/EditVideo";
   //redux
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
@@ -35,6 +36,7 @@ function MyStack() {
       <Stack.Screen name="SlideShow" component={SlideShow} options={{headerShown:false}}/>
       <Stack.Screen name="RecordScreen" component={RecordScreen} options={{headerShown:false}}/>
       <Stack.Screen name="SaveVideo" component={SaveVideo} options={{headerShown:false}}/>
+      <Stack.Screen name="EditVideo" component={EditVideo} options={{headerShown:false}}/>
     </Stack.Navigator>
   );
 }
@@ -43,7 +45,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <NativeBaseProvider>
-        <NavigationContainer>
+        <NavigationContainer style={styles.container}>
           <MyStack />
         </NavigationContainer>
       </NativeBaseProvider>

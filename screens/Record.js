@@ -11,174 +11,6 @@ import { useIsFocused } from '@react-navigation/core';
 import { useNavigation } from '@react-navigation/native';
 
 const Record = () => {
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: "#373f68",
-      alignItems: "center",
-      justifyContent: "center",
-    },
-    camera: {
-      flex: 1,
-      backgroundColor:'black',
-      aspectRatio:9/16,
-    },
-    buttonContainer: {
-      flex: 1,
-      backgroundColor: 'transparent',
-      flexDirection: 'row',
-      // margin: 20,
-    },
-    button: {
-      flex: 0.1,
-      alignSelf: 'flex-end',
-      alignItems: 'center',
-    },
-    buttonsContainer: {
-      flex: 1,
-      flexDirection: "column",
-      alignItems: "center",
-      alignContent: "center",
-      position: "absolute",
-      top: "5%",
-      right: "5%",
-    },
-    buttonRecord: {
-      marginBottom: 20,
-      alignItems: "center",
-      alignContent: "center",
-      shadowColor: "#303838",
-      shadowOffset: { width: 0, height: 5 },
-      shadowRadius: 10,
-      shadowOpacity: 0.35,
-    },
-    textRecord: {
-      color: "white",
-    },
-    backContainer: {
-      flex: 1,
-      flexDirection: "column",
-      alignItems: "center",
-      alignContent: "center",
-      position: "absolute",
-      top: "5%",
-      left: "5%",
-    },
-    bottomContainer: {
-      flex: 1,
-      width: "100%",
-      flexDirection: "row",
-      justifyContent: "space-around",
-      alignItems: "center",
-      alignContent: "center",
-      position: "absolute",
-      bottom: "8%",
-    },
-    recordScreenButton:{
-      borderWidth: 2,
-      borderRadius:50,
-      borderColor: 'white',
-      height: 75,
-      width:75,
-      justifyContent: 'center',
-      alignItems: 'center'
-    },
-    innerRecordScreenButton:{
-      borderWidth: 2,
-      borderRadius:50,
-      borderColor: '#FFCB37',
-      height: 65,
-      width:65,
-      backgroundColor: '#FFCB37'
-    },  
-    bottomSelects: {
-      flex: 1,
-      width: "100%",
-      flexDirection: "row",
-      justifyContent: "center",
-      paddingTop:15,
-      paddingLeft:50,
-      position: "absolute",
-      alignContent: "center",
-      bottom: "5%",
-    },
-    optionButtons:{
-      padding:15,
-    },
-    text: {
-      fontSize: 18,
-      color: 'white',
-    },
-    bottomBarContainer:{
-      alignItems:'center',
-      position:'absolute',
-      bottom:0,
-      flexDirection:'row',
-      marginBottom:20,
-      bottom: "4%",
-    },
-    recordButtonContainer:{
-      flex:1,
-      marginHorizontal:30
-    },
-    recordScreenButton:{
-      borderWidth: 2,
-      borderRadius:50,
-      borderColor: 'white',
-      height: 75,
-      width:75,
-      justifyContent: 'center',
-      alignItems: 'center',
-      alignSelf:'center',
-      marginBottom:30
-    },
-    innerRecordScreenButton:{
-      borderWidth: 2,
-      borderRadius:50,
-      borderColor: '#FFCB37',
-      height: 65,
-      width:65,
-      backgroundColor: '#FFCB37'
-    }, 
-    galleryButton:{
-      borderWidth:2,
-      borderColor:'white',
-      borderRadius:10,
-      overflow:'hidden',
-      width:50,
-      height:50
-    },
-    galleryButtonImage:{
-      width:50,
-      height:50
-    },
-    sideBarContainer:{
-      top:80,
-      right:0,
-      marginHorizontal:20,
-      position:'absolute'
-    },
-    iconText:{
-      fontSize: 14,
-      marginBottom: 10,
-      color: 'white', 
-      textAlign:'center'
-    },
-    bottomSelects: {
-      flex: 1,
-      width: "100%",
-      flexDirection: "row",
-      justifyContent: "center",
-      paddingTop:15,
-      position: "absolute",
-      alignContent: "center",
-      bottom: "2%",
-    },
-      optionButtons:{
-      padding:10,
-    }
-  });
-
   const [hasCameraPermission, setHasCameraPermission] = useState(false);
   const [hasAudioPermission, setHasAudioPermission] = useState(false);
   const [hasGalleryPermission, setHasGalleryPermission] = useState(false);
@@ -327,8 +159,8 @@ const Record = () => {
         </View>
 
         <View style={styles.bottomContainer}>
-          <TouchableOpacity style={styles.buttonRecord}>
-            <Ionicons name="color-filter" size={38} color="white" onPress={() => navigation.navigate("SlideShow")} />
+          <TouchableOpacity style={styles.buttonRecord} onPress={() => navigation.navigate("EditVideo")}>
+            <Ionicons name="color-filter" size={38} color="white" />
             <Text style={styles.textRecord}>Effect</Text>
           </TouchableOpacity>
 
@@ -343,7 +175,11 @@ const Record = () => {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.buttonRecord} onPress={() => pickFromGallery()}>
+          {/* <TouchableOpacity style={styles.buttonRecord} onPress={() => pickFromGallery()}>
+            <FontAwesome name="image" size={37} color="white" />
+            <Text style={styles.textRecord}>Upload</Text>
+          </TouchableOpacity> */}
+          <TouchableOpacity style={styles.buttonRecord} onPress={() => navigation.navigate('ImageGallery')}>
             <FontAwesome name="image" size={37} color="white" />
             <Text style={styles.textRecord}>Upload</Text>
           </TouchableOpacity>
@@ -373,5 +209,173 @@ const Record = () => {
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#373f68",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  camera: {
+    flex: 1,
+    backgroundColor:'black',
+    aspectRatio:9/16,
+  },
+  buttonContainer: {
+    flex: 1,
+    backgroundColor: 'transparent',
+    flexDirection: 'row',
+    // margin: 20,
+  },
+  button: {
+    flex: 0.1,
+    alignSelf: 'flex-end',
+    alignItems: 'center',
+  },
+  buttonsContainer: {
+    flex: 1,
+    flexDirection: "column",
+    alignItems: "center",
+    alignContent: "center",
+    position: "absolute",
+    top: "5%",
+    right: "5%",
+  },
+  buttonRecord: {
+    marginBottom: 20,
+    alignItems: "center",
+    alignContent: "center",
+    shadowColor: "#303838",
+    shadowOffset: { width: 0, height: 5 },
+    shadowRadius: 10,
+    shadowOpacity: 0.35,
+  },
+  textRecord: {
+    color: "white",
+  },
+  backContainer: {
+    flex: 1,
+    flexDirection: "column",
+    alignItems: "center",
+    alignContent: "center",
+    position: "absolute",
+    top: "5%",
+    left: "5%",
+  },
+  bottomContainer: {
+    flex: 1,
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    alignContent: "center",
+    position: "absolute",
+    bottom: "8%",
+  },
+  recordScreenButton:{
+    borderWidth: 2,
+    borderRadius:50,
+    borderColor: 'white',
+    height: 75,
+    width:75,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  innerRecordScreenButton:{
+    borderWidth: 2,
+    borderRadius:50,
+    borderColor: '#FFCB37',
+    height: 65,
+    width:65,
+    backgroundColor: '#FFCB37'
+  },  
+  bottomSelects: {
+    flex: 1,
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "center",
+    paddingTop:15,
+    paddingLeft:50,
+    position: "absolute",
+    alignContent: "center",
+    bottom: "5%",
+  },
+  optionButtons:{
+    padding:15,
+  },
+  text: {
+    fontSize: 18,
+    color: 'white',
+  },
+  bottomBarContainer:{
+    alignItems:'center',
+    position:'absolute',
+    bottom:0,
+    flexDirection:'row',
+    marginBottom:20,
+    bottom: "4%",
+  },
+  recordButtonContainer:{
+    flex:1,
+    marginHorizontal:30
+  },
+  recordScreenButton:{
+    borderWidth: 2,
+    borderRadius:50,
+    borderColor: 'white',
+    height: 75,
+    width:75,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf:'center',
+    marginBottom:30
+  },
+  innerRecordScreenButton:{
+    borderWidth: 2,
+    borderRadius:50,
+    borderColor: '#FFCB37',
+    height: 65,
+    width:65,
+    backgroundColor: '#FFCB37'
+  }, 
+  galleryButton:{
+    borderWidth:2,
+    borderColor:'white',
+    borderRadius:10,
+    overflow:'hidden',
+    width:50,
+    height:50
+  },
+  galleryButtonImage:{
+    width:50,
+    height:50
+  },
+  sideBarContainer:{
+    top:80,
+    right:0,
+    marginHorizontal:20,
+    position:'absolute'
+  },
+  iconText:{
+    fontSize: 14,
+    marginBottom: 10,
+    color: 'white', 
+    textAlign:'center'
+  },
+  bottomSelects: {
+    flex: 1,
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "center",
+    paddingTop:15,
+    position: "absolute",
+    alignContent: "center",
+    bottom: "2%",
+  },
+    optionButtons:{
+    padding:10,
+  }
+});
 
 export default Record;

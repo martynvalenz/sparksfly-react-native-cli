@@ -4085,6 +4085,13 @@ expo-updates@~0.10.13:
     resolve-from "^5.0.0"
     uuid "^3.4.0"
 
+expo-video-thumbnails@~6.0.3:
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/expo-video-thumbnails/-/expo-video-thumbnails-6.0.3.tgz#0bdee794a8a1348a8b9907f3d1d5b39453d555b2"
+  integrity sha512-lMTE60AAixuhx8qr7jDoOEC/TzILIZgpOeqeKwWes7OdR6QZM+JbTqQrl+e6LYQmMqEsRAo1JRfjzvlBmaoO4A==
+  dependencies:
+    expo-modules-core "~0.4.4"
+
 expo@~43.0.2:
   version "43.0.3"
   resolved "https://registry.npmjs.org/expo/-/expo-43.0.3.tgz"
