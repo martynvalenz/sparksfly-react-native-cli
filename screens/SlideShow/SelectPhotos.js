@@ -14,259 +14,27 @@ import {
 } from "native-base";
 import { ChevronRightIcon, ChevronLeftIcon, SearchIcon } from "native-base";
 import { StyleSheet, View, Text, TouchableOpacity, Image, Dimensions} from "react-native";
+import { Video, AVPlaybackStatus } from 'expo-av';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useSelector } from "react-redux";
+import { useNavigation } from '@react-navigation/native';
+import ImagesToVideo from "react-native-images-to-video";
 // import Icon from 'react-native-ico-material-design';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
-const SelectPhotos = ({ navigation }) => {
-  const data = useSelector((state) => state.gallery);
-  console.clear()
-  console.log(data)
-  // const data = [
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bb",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bc",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bd",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28be",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bb",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bc",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bd",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28be",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bb",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bc",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bd",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28be",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bb",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bc",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bd",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28be",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bb",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bc",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bd",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28be",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bb",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bc",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bd",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  //   {
-  //     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28be",
-  //     songName: "Aafreen Khan",
-  //     artistName: "Alan Walker",
-  //     time: "2:30",
-  //     image:
-  //       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  //   },
-  // ];
+const SelectPhotos = (props) => {
+  const navigation = useNavigation();
+  const data = props.route.params.data
+
+  const videoURL = await ImagesToVideo.render({
+      fileName: 'My Video',
+      screenTimePerImage: 3,
+      width: 300,
+      height: 400,
+      absolutePaths: data,
+  });
 
   const styles = StyleSheet.create({
     header: {
@@ -344,7 +112,7 @@ const SelectPhotos = ({ navigation }) => {
             <View style={{ alignItems:'center' }}>
               <TouchableOpacity>
                 <Image 
-                  source={{uri: item.image}} 
+                  source={{uri: item.uri}} 
                   style={{ 
                     width:width * 0.28,
                     height:width * 0.28, 
@@ -352,11 +120,24 @@ const SelectPhotos = ({ navigation }) => {
                     borderRadius:12 
                   }}
                 >
-                  
                 </Image>
               </TouchableOpacity>
             </View>
           )}
+        />
+        <Video
+          ref={video}
+          style={{ 
+            width,
+            height:height * 0.5
+           }}
+          source={{
+            uri: videoURL,
+          }}
+          useNativeControls
+          resizeMode="contain"
+          isLooping
+          onPlaybackStatusUpdate={status => setStatus(() => status)}
         />
       </Box>
       <View style={styles.bottomContainer}>

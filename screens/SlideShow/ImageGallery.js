@@ -34,18 +34,12 @@ const ImageGallery = ({ navigation }) => {
   }, []);
 
   
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // const image = useSelector((state) => state.gallery);
 
   const onSuccess = async (data) => {
     Alert.alert('Done',`${data.length} Images selected`)
-    // console.log(data)
-    
-    await data.forEach(img => {
-      dispatch(addImages({image:img.uri}));
-    });
-
-    navigation.navigate('SelectPhotos')
+    navigation.navigate('SelectPhotos',{data})
   };
 
   const widgetErrors = useMemo(
