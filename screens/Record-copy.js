@@ -179,7 +179,7 @@ const Record = () => {
             <FontAwesome name="image" size={37} color="white" />
             <Text style={styles.textRecord}>Upload</Text>
           </TouchableOpacity> */}
-          <TouchableOpacity style={styles.buttonRecord} onPress={() => pickFromGallery()}>
+          <TouchableOpacity style={styles.buttonRecord} onPress={() => navigation.navigate('ImageGallery')}>
             <FontAwesome name="image" size={37} color="white" />
             <Text style={styles.textRecord}>Upload</Text>
           </TouchableOpacity>
