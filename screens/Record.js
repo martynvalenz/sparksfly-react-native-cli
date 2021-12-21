@@ -159,7 +159,7 @@ const Record = () => {
         </View>
 
         <View style={styles.bottomContainer}>
-          <TouchableOpacity style={styles.buttonRecord} onPress={() => navigation.navigate("EditVideo")}>
+          <TouchableOpacity style={styles.buttonRecord} onPress={() => navigation.navigate("SlideShow")}>
             <Ionicons name="color-filter" size={38} color="white" />
             <Text style={styles.textRecord}>Effect</Text>
           </TouchableOpacity>
