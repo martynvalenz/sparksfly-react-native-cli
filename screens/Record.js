@@ -9,6 +9,7 @@ import * as ImagePicker from 'expo-image-picker';
 import * as MediaLibrary from 'expo-media-library';
 import { useIsFocused } from '@react-navigation/core';
 import { useNavigation } from '@react-navigation/native';
+import {VESDK, Configuration} from 'react-native-videoeditorsdk';
 
 const Record = () => {
   const [hasCameraPermission, setHasCameraPermission] = useState(false);
@@ -42,6 +43,9 @@ const Record = () => {
     })(); 
   }, []);
 
+  let serialization = null;
+  // let configuration: Configuration{}
+
   const handleMaxDuration = () => {
     if(maxDuration === 15){
       setMaxDuration(30)
@@ -62,7 +66,13 @@ const Record = () => {
         if(videoRecordPromise){
           const data = await videoRecordPromise;
           const source = data.uri;
-          navigation.navigate('SaveVideo', {source})
+          // navigation.navigate('SaveVideo', {source})
+          VESDK.openEditor(source,serialization)
+          .then(result => {
+            if(result !== null){
+              serialization = result.serialization;
+            }
+          })
         }
       } catch (error) {
         console.warn(error)
@@ -159,7 +169,7 @@ const Record = () => {
         </View>
 
         <View style={styles.bottomContainer}>
-          <TouchableOpacity style={styles.buttonRecord} onPress={() => navigation.navigate("SlideShow")}>
+          <TouchableOpacity style={styles.buttonRecord} onPress={() => pickFromGallery()}>
             <Ionicons name="color-filter" size={38} color="white" />
             <Text style={styles.textRecord}>Effect</Text>
           </TouchableOpacity>
@@ -179,7 +189,7 @@ const Record = () => {
             <FontAwesome name="image" size={37} color="white" />
             <Text style={styles.textRecord}>Upload</Text>
           </TouchableOpacity> */}
-          <TouchableOpacity style={styles.buttonRecord} onPress={() => pickFromGallery()}>
+          <TouchableOpacity style={styles.buttonRecord} onPress={() => navigation.navigate("ImageGallery")}>
             <FontAwesome name="image" size={37} color="white" />
             <Text style={styles.textRecord}>Upload</Text>
           </TouchableOpacity>

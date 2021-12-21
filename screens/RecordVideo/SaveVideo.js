@@ -4,6 +4,7 @@ import { useNavigation, StackActions } from '@react-navigation/native';
 import { Ionicons, Feather } from '@expo/vector-icons';
 import {useDispatch} from 'react-redux';
 import { saveVideo } from '../../redux/actions/videos';
+import {VESDK, VideoEditorModal, Configuration} from 'react-native-videoeditorsdk';
 
 const SaveVideo = (props) => {
   const navigation = useNavigation();
@@ -47,11 +48,12 @@ const SaveVideo = (props) => {
           <Text style={styles.cancelText}>Cancel</Text>
         </TouchableOpacity>
         <TouchableOpacity 
-          onPress={() => handleSaveVideo()}
+          // onPress={() => handleSaveVideo()}
+          onPress={() => VESDK.openEditor(props.route.params.source)}
           style={styles.postButton}
         >
           <Feather name="corner-left-up" size={24} color="black"/>
-          <Text style={styles.postText}>Upload</Text>
+          <Text style={styles.postText}>Edit</Text>
         </TouchableOpacity>
       </View>
     </View>

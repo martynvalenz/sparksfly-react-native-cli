@@ -11,7 +11,8 @@ export const gallerySlice = createSlice({
       return {
         ...state,
         // name: action.payload.name,
-        item: action.payload,
+        // item: action.payload,
+        items: state.items.concat(action.payload)
       };
     }
   },
