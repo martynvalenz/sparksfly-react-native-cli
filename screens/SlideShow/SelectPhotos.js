@@ -14,11 +14,9 @@ import {
 } from "native-base";
 import { ChevronRightIcon, ChevronLeftIcon, SearchIcon } from "native-base";
 import { StyleSheet, View, Text, TouchableOpacity, Image, Dimensions} from "react-native";
-import { Video, AVPlaybackStatus } from 'expo-av';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useSelector } from "react-redux";
 import { useNavigation } from '@react-navigation/native';
-import ImagesToVideo from "react-native-images-to-video";
 // import Icon from 'react-native-ico-material-design';
 
 const width = Dimensions.get('window').width;
@@ -27,14 +25,7 @@ const height = Dimensions.get('window').height;
 const SelectPhotos = (props) => {
   const navigation = useNavigation();
   const data = props.route.params.data
-
-  const videoURL = await ImagesToVideo.render({
-      fileName: 'My Video',
-      screenTimePerImage: 3,
-      width: 300,
-      height: 400,
-      absolutePaths: data,
-  });
+  console.clear()
 
   const styles = StyleSheet.create({
     header: {
@@ -124,20 +115,6 @@ const SelectPhotos = (props) => {
               </TouchableOpacity>
             </View>
           )}
-        />
-        <Video
-          ref={video}
-          style={{ 
-            width,
-            height:height * 0.5
-           }}
-          source={{
-            uri: videoURL,
-          }}
-          useNativeControls
-          resizeMode="contain"
-          isLooping
-          onPlaybackStatusUpdate={status => setStatus(() => status)}
         />
       </Box>
       <View style={styles.bottomContainer}>
