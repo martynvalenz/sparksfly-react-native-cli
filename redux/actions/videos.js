@@ -21,12 +21,14 @@ export const saveVideo = (video)  => dispatch => new Promise((resolve,reject) =>
 
 export const getPostsByUser = (/* uid = firebase.auth().currentUser.uid */)  => dispatch => new Promise((resolve,reject) => {
   firebase.firestore().collection('videos').orderBy('creation','desc')
-  .onSnapshot(snap => {
-    let videos = snap.docs().map(doc => {
+  .onSnapshot(snapshot => {
+    let videos = snapshot.docs.map(doc => {
       const data = doc.data()
       const id = doc.id
       return {id,...data}
     })
+
+    console.log(videos)
     dispatch({type:GET_VIDEOS})
   })
 })
