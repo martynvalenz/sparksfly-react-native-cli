@@ -16,6 +16,8 @@ import ImageGallery from "./screens/SlideShow/ImageGallery";
 import RecordScreen from "./screens/RecordVideo/RecordScreen";
 import SaveVideo from "./screens/RecordVideo/SaveVideo";
 import EditVideo from "./screens/RecordVideo/EditVideo";
+import VideoPicker from "./screens/RecordVideo/VideoPicker";
+import ViewVideo from "./screens/RecordVideo/ViewVideo";
   //redux
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
@@ -37,6 +39,8 @@ function MyStack() {
       <Stack.Screen name="RecordScreen" component={RecordScreen} options={{headerShown:false}}/>
       <Stack.Screen name="SaveVideo" component={SaveVideo} options={{headerShown:false}}/>
       <Stack.Screen name="EditVideo" component={EditVideo} options={{headerShown:false}}/>
+      <Stack.Screen name="ViewVideo" component={ViewVideo} options={{headerShown:false}}/>
+      <Stack.Screen name="VideoPicker" component={VideoPicker} options={{headerShown:false}}/>
     </Stack.Navigator>
   );
 }

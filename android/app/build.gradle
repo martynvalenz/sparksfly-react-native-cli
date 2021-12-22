@@ -282,7 +282,8 @@ applyNativeModulesAppBuildGradle(project)
 
 android {
     defaultConfig {
-        multiDexEnabled true
+        // multiDexEnabled true
+        missingDimensionStrategy 'react-native-camera', 'general'
     }
 }
 dependencies {
