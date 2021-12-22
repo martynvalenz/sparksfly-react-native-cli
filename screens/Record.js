@@ -66,13 +66,13 @@ const Record = () => {
         if(videoRecordPromise){
           const data = await videoRecordPromise;
           const source = data.uri;
-          // navigation.navigate('SaveVideo', {source})
-          VESDK.openEditor(source,serialization)
-          .then(result => {
-            if(result !== null){
-              serialization = result.serialization;
-            }
-          })
+          navigation.navigate('ViewVideo', {source})
+          // VESDK.openEditor(source,serialization)
+          // .then(result => {
+          //   if(result !== null){
+          //     serialization = result.serialization;
+          //   }
+          // })
         }
       } catch (error) {
         console.warn(error)
