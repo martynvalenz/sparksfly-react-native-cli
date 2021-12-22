@@ -6449,6 +6449,11 @@
   "resolved" "https://registry.npmjs.org/react-native-image-picker/-/react-native-image-picker-4.5.0.tgz"
   "version" "4.5.0"
 
+"react-native-image-video-picker-editor@^1.0.15":
+  "integrity" "sha512-Y8YpJt+b3Nukmb9XdL6qdvfz9XIsuTuUUwG0YHTpF2F15/Z9ksq20X5wiKQboRJk/z+Pf+f8SWriK5SELrz4ew=="
+  "resolved" "https://registry.npmjs.org/react-native-image-video-picker-editor/-/react-native-image-video-picker-editor-1.0.15.tgz"
+  "version" "1.0.15"
+
 "react-native-images-to-video@^0.2.0":
   "integrity" "sha512-2/eCFpsZgLrQ6cF/gk2HCjejlpfhbftnsTa5QIWjWMZoAPrIg+VVqESp+H5diqQJnS6wMEtBArM6EgXOZkWIng=="
   "resolved" "https://registry.npmjs.org/react-native-images-to-video/-/react-native-images-to-video-0.2.0.tgz"

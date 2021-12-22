@@ -37,6 +37,7 @@
     "react-native-gesture-handler": "~1.10.2",
     "react-native-ico-material-design": "^3.3.1",
     "react-native-image-picker": "^4.5.0",
+    "react-native-image-video-picker-editor": "^1.0.15",
     "react-native-images-to-video": "^0.2.0",
     "react-native-photoeditorsdk": "^2.11.0",
     "react-native-reanimated": "~2.2.0",

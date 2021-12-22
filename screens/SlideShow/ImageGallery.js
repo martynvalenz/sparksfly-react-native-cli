@@ -2,6 +2,7 @@
 // https://github.com/prscX/react-native-photo-editor
 // https://github.com/iyegoroff/react-native-image-filter-kit
 // https://reactnativeexample.com/image-editor-build-using-react-native-for-ios-and-android/
+// https://reactnativeexample.com/react-native-image-video-picker-editor/ 
 import React, { useMemo, useEffect } from 'react';
 import { Text, View, StyleSheet, SafeAreaView, Alert, Platform } from 'react-native';
 import { AssetsSelector } from 'expo-images-picker';
