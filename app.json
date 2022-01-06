@@ -44,13 +44,13 @@
       "favicon": "./assets/favicon.png",
       "config":{
         "firebase":{
-          "apiKey": "AIzaSyDQvoszcIR6qveYrD4rOkpGImWXHZtds9I",
-          "authDomain": "video-record-7f696.firebaseapp.com",
-          "projectId": "video-record-7f696",
-          "storageBucket": "video-record-7f696.appspot.com",
-          "messagingSenderId": "1086213626486",
-          "appId": "1:1086213626486:web:cae0bec2bbf2eea2fe9d57",
-          "measurementId": "G-M0EPK0QCCK"
+          "apiKey":"",
+          "authDomain":"",
+          "projectId":"",
+          "storageBucket":"",
+          "messagingSenderId":"",
+          "appId":"",
+          "measurementId":""
         }
       }
     },

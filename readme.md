@@ -4,10 +4,7 @@ yarn global add expo-cli
 ```
 
 ### Create firebase config file
-```
-cp firebase-example.js firebase.js
-```
-Copy the firebase config to firebase.js file inside firebaseConfig object
+Add firebase keys inside the app.json file under web -> config -> firebase
 
 ## Development and Build
 1. Expo dev
