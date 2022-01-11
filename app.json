@@ -42,15 +42,15 @@
     },
     "web": {
       "favicon": "./assets/favicon.png",
-      "config":{
-        "firebase":{
-          "apiKey":"",
-          "authDomain":"",
-          "projectId":"",
-          "storageBucket":"",
-          "messagingSenderId":"",
-          "appId":"",
-          "measurementId":""
+      "config": {
+        "firebase": {
+          "apiKey": "",
+          "authDomain": "",
+          "projectId": "",
+          "storageBucket": "",
+          "messagingSenderId": "",
+          "appId": "",
+          "measurementId": ""
         }
       }
     },
@@ -62,6 +62,7 @@
         }
       ]
     ],
-    "description": ""
+    "description": "",
+    "githubUrl": "https://github.com/martynvalenz/sparksfly-react-native-cli"
   }
 }

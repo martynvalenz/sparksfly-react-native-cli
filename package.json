@@ -8,7 +8,9 @@
     "ios": "expo run:ios",
     "ios:cli": "npx react-native run-ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "android:apk":"expo build:android -t apk",
+    "ios:tar":"expo build:ios -t simulator"
   },
   "dependencies": {
     "@expo/vector-icons": "^12.0.5",
